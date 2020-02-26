@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>What makes a song popular?</title>
+    <meta charset="utf-8">
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>What makes a song popular?</h1>
+
+    <div id="tooltip" class="hidden"></div>
+
+    <p>
+        For decades, music theorists have attempted to pinpoint what makes one song universally liked versus all
+        others. Thanks to the internet, streaming services have been able to precisely quantify sonic popularity;
+        at the end of every year, Spotify provides a list of the most listened to songs on their platform. However,
+        rather than simply releasing the straight statistics of number of streams and so on, they include insights
+        into the actual content of these ubiquitous tracks. Let's take a look at some of these factors and how they
+        might explain song popularity.
+    </p>
+
+    <p>
+        The "energy" variable in this dataset is defined as "a measure from 0.0 to 1.0 and represents a perceptual measure
+        of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy." So to begin, let's compare
+        the energy, tempo, and loudness statistics to make sure they follow similar trends.
+    </p>
+
+    <div class="center">
+        <button id="tempoScatter">Tempo</button>
+        <button id="loudnessScatter">Loudness</button>
+    </div>
+
+    <div class="center">
+        <svg id="scatterPlot"></svg>
+    </div>
+
+    <p>
+        While the loudness of a song seems to have a direct correlation to how energetic it is, a song's tempo seems to
+        be unrelated. For example, the second most energetic song on the list, "1, 2, 3" by Sofia Reyes, is on the
+        higher end of the loudness range but on the lower end of the tempo range. Yet, the 11th most energetic song on
+        the list, "Stir Fry" by Migos, is expectedly closer to the middle of the loudness range but surprisingly the
+        third fastest track. Even though this energy variable claims to be influenced by a song's tempo, the data
+        seems to suggest otherwise. Due to the relatively abstract nature of these variables made up by Spotify without
+        any amount of transparency into how they are precisely calculated, I think it's best to not focus on them. The
+        energy variable has already proven to be somewhat unreliable. "Danceability" also claims to be heavily
+        influenced by tempo, but when compared, they also don't line up. There are even variables that aren't really
+        relevant, like "liveliness"; what does it matter if a song was performed live or not (especially when none of
+        these were)?
+    </p>
+
+    <p>
+        So let's talk about the pure metrics and how they directly affect a song's popularity. There are some that
+        aren't even worth visualizing like time signatures; almost every song is in 4/4, by far the most common
+        signature. There's also duration, which is expectedly short with most pop songs being somewhere between 3 and 4
+        minutes. Aside from those, let's revisit tempo and loudness as well as look at one abstract Spotify variable
+        that actually seems to have a correlation, "acousticness".
+    </p>
+
+    <div class="center">
+        <button id="tempoBar">Tempo</button>
+        <button id="loudnessBar">Loudness</button>
+        <button id="acousticnessBar">Acousticness</button>
+    </div>
+
+    <div class="center">
+        <svg id="barChart"></svg>
+    </div>
+
+    <p>
+        There is actually a pretty good spread when it comes to tempo. While the largest percentage lies in the 80-100
+        BPM range, there are other common ranges. Honestly, the most surprising thing here is the existence of even a
+        few songs with BPMs higher than 180; that is almost unreasonably fast, at least for a common pop song.
+    </p>
+
+    <p>
+        Loudness seems to peak farther to the high end of the spectrum. If you want to have those 808s and heavy synth
+        lines, you have to crank the volume.
+    </p>
+
+    <p>
+        Most of these songs are very low on the acoustic spectrum. Modern pop songs rely heavily on electronic backing
+        tracks, so this is no surprise.
+    </p>
+
+    <p>
+        The basis of any song is its key and mode. Only from those factors can chord progressions, melodies, and
+        harmonies be created. Unsurprisingly, most songs are in major keys as most pop songs are happy songs.
+    </p>
+
+    <div class="center">
+        <svg id="doubleBarChart"></svg>
+    </div>
+
+    <p>
+        Putting all of this information together, it seems as though a relatively loud, electronic song in a major key
+        at a mild tempo creates a perfect template for a smash hit. Obviously, it has to be taken into account that
+        this is only data from one year and I'm sure that different years have possibly drastically different results.
+        But at the very least, this is the most recent set of data, so in a sense it is the most relevant.
+    </p>
+
+    <script src="main.js"></script>
+</body>
+</html>

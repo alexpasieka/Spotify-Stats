@@ -1,0 +1,67 @@
+@font-face {
+    font-family: proxima-nova-light;
+    src: url(proxima_nova/proxima_nova_light.otf);
+}
+@font-face {
+    font-family: proxima-nova-bold;
+    src: url(proxima_nova/proxima_nova_bold.otf);
+}
+
+* {
+    font-family: proxima-nova-light;
+    color: #AFAFAF;
+    background-color: #181818;
+}
+
+h1 {
+    font-family: proxima-nova-bold;
+    font-size: 7vh;
+    color: white;
+}
+
+h1, p {
+    padding: 0 22%;
+}
+
+.center {
+    text-align: center;
+}
+
+button {
+    width: 10vw;
+    height: 4vh;
+    margin: 1%;
+    font-size: 1vw;
+    background-color: #282828;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #1DB954;
+}
+
+.axis line,
+.axis path,
+.axis text {
+    color: white;
+}
+.bottomAxis line,
+.bottomAxis path {
+    stroke: none;
+}
+text {
+    fill: white;
+}
+
+#tooltip {
+    position: absolute;
+    padding: 5px;
+    color: white;
+    background-color: #282828;
+}
+#tooltip.hidden {
+    display: none;
+}
